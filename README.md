@@ -1,22 +1,19 @@
-GitHub Action para Despliegue Automático de Odoo via SSH
-![Odoo Logo](https://www.odoo.com/web/image/res.company/1/logo?unique=f3db218)
-![GitHub Actions Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
-Plantilla para desplegar automáticamente módulos de Odoo en un servidor remoto cuando se hace push a la rama principal.
+🚀 GitHub Action para Despliegue Automático de Odoo via SSH
+<div align="center"> <img src="https://www.odoo.com/web/image/res.company/1/logo?unique=f3db218" alt="Odoo Logo" width="200"> <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Actions Logo" width="200"> <h3>Despliegue continuo de módulos Odoo con GitHub Actions</h3> </div>
 
 🔧 Configuración Requerida
-1. Variables de Entorno
-Configura estas variables en tu repositorio (Settings → Secrets and variables → Actions):
+## 1. 🛠️ Variables de Configuración
 
-Variable	Descripción	Ejemplo
-SERVER_IP	IP o dominio del servidor	192.168.1.100
-SSH_USER	Usuario SSH con permisos	odoo_user
-DOCKER_ODOO	Nombre contenedor Odoo	odoo17
-DOCKER_DB	Nombre contenedor PostgreSQL	odoo-db-17
-REPO_NAME	Nombre de tu repositorio	custom-addons
-RAMA_PRINCIPAL	Rama a desplegar	17.0
-PUERTO_ACTUALIZACION	Puerto para updates	8069
-RUTA_ODOO	Ruta base de Odoo	/home/odoo_user/Odoo/17.0
-RUTA_MODULOS	Ruta a módulos	addons
+| Variable               | Descripción                                  | Ejemplo                | Tipo       |
+|------------------------|----------------------------------------------|------------------------|------------|
+| 🌐 `SERVER_IP`         | Dirección del servidor destino               | `odoo.midominio.com`   | Required   |
+| 👤 `SSH_USER`          | Usuario para conexión SSH                    | `odoo_deploy`          | Required   |
+| 🐳 `DOCKER_ODOO`       | Nombre contenedor Odoo                       | `odoo17-prod`          | Required   |
+| 🗃️ `DOCKER_DB`        | Nombre contenedor PostgreSQL                 | `pg-odoo17`            | Required   |
+| 📂 `RUTA_ODOO`        | Ruta base de instalación                     | `/opt/odoo/17.0`       | Required   |
+| 🌿 `RAMA_PRINCIPAL`   | Rama monitoreada para despliegues            | `main`                 | Required   |
+| 🔑 `SSH_PRIVATE_KEY`   | Clave SSH (agregar como Secret)              | [Ver instrucciones]    | Secret     |
+
 2. 🔐 Configurar SSH Private Key (IMPORTANTE)
 Genera una clave SSH en tu servidor si no tienes una:
 
